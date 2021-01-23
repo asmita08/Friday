@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+///Project Local Imports
 import 'package:class_manager/constants.dart';
-import 'package:class_manager/widgets/bottom_navigation.dart';
+import 'package:class_manager/screens/login_page.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -84,45 +86,36 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height - 130,
-              left: 100.0,
-              right: 100.0,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => BottomNavigation()),
-                  );
-                },
-                child: Container(
-                  width: 150.0,
-                  height: 55.0,
-                  padding: EdgeInsets.only(left: 40.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50.0),
-                    color: Theme.of(context).accentColor,
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      Text(
-                        "GET GOING",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w400,
+                top: MediaQuery.of(context).size.height - 130,
+                left: 100.0,
+                right: 100.0,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => LoginPage()),
+                    );
+                  },
+                  child: Container(
+                    width: 150.0,
+                    height: 55.0,
+                    padding: EdgeInsets.only(left: 40.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50.0),
+                      color: Theme.of(context).accentColor,
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          "GET GOING",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 20.0),
-                      Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Colors.white,
-                        size: 28.0,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ),
-            ),
+                )),
           ],
         ),
       ),
